@@ -1,38 +1,91 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Demo on vercel
 
-## Getting Started
+I have deployed this project on vercel. You can check it out [here](https://agecode-test.vercel.app/).
+
+![Preview](https://user-images.githubusercontent.com/44144438/222250924-ad843f42-2241-4957-aacf-ea19c18c4a8c.png)
+## Getting Started on Local
 
 First, run the development server:
 
 ```bash
+npm install
+
+# next
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## About this project
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+This project is a test project from AgeCode.
+Requirements are as follows:
+- Organize your own data using mock data
+- Figma design to code and implement code use NextJS, TailwindCSS and ReactQuery.
+- User profile includes 3 tabs:
+  - Profile (プロフィール)
+    - Includes 3 blocks:
+      - Audio Block
+      - Video Block (Youtube)
+      - Custom link block
+    - All blocks are linked to new page when clicking
+    - IF MORE THAN 3 custom link blocks are next to each other → they get double grouped together for horizontal scroll (Design)
+  - Rating ( 感謝の声)
+  - Timeline (タイムライン)
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Design is provided at [here](https://www.figma.com/file/2aa5C7ruV6lCocOmIHpBi6/Frontend-Test?node-id=0%3A1&t=OnOy7urASZe9kAWm-1).
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Tech Stack
+- NextJS
+- Typescript
+- TailwindCSS
+- SwiperJS
+- [x] ReactQuery
 
-## Learn More
+## Features
+- Mobile design only
+- Mock data api
+- Home page to show all users, each user has a link to their profile page, clicking on user's name will redirect to their profile page
+- User profile page to show user's profile, rating and timeline by change tab, in rating tab, user can redirect to view other user's profile by clicking on their name
+- In block `Link`, i use swiper to make it scrollable horizontally when there are more than 3 links
 
-To learn more about Next.js, take a look at the following resources:
+## What I have done
+- [✓] Home page
+- [✓] User profile page
+- [✓] Profile tab
+- [✓] Rating tab
+- [✓] Timeline tab
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Code Structure
+- components
+  - common
+    - Button
+    - Avatar
+    - Rating
+  - cards
+    - AudioCard
+    - VideoCard
+    - RatingCard
+    - TimelineCard
+    - UserCard
+    - CustomLinkCard
+  - blocks
+    - AudioBlock
+    - VideoBlock
+    - CustomLinkBlock
+    - RatingBlock
+    - TimelineBlock
+    - UserInforBlock
+  - tabs
+    - Tab
+    - Tabs
+- pages
+  - index.tsx
+  - users
+    - [id].tsx
+- styles
+  - global.css
+- hooks: custom hooks
+- types: typescript types
+- utils: helper functions
+- mocks: mock data
